@@ -1,0 +1,100 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>配对</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.box{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: 0 auto;
+			background: url(images/bg2.png) 0 0 no-repeat;
+		}
+		.head{
+			width: 6.4rem;
+			height: .6rem;
+			background: #e83e4a;
+		}
+		.head_m{
+			display: inline-block;
+			font-size: .34rem;
+			width: 5.92rem;
+			color: #fff;
+			font-family: 微软雅黑;
+			text-align: center;
+		}
+		.head_l{
+			width: .19rem;
+			height: .33rem;
+			color: #fff;
+			font-size: .3rem;
+			font-weight: bold;
+		}
+		.con{
+			width: 5.5rem;
+			margin: 1rem auto;
+		}
+		.con_t{
+			overflow: hidden;
+		}
+		.con_t_l{
+			width: 2.4rem;
+			height: 1.6rem;
+			background: url(images/hqm.png) 0 0 no-repeat;
+			float: left;
+			cursor: pointer;
+		}
+		.con_t_r{
+			width: 2.4rem;
+			height: 1.6rem;
+			background: url(images/yzm.png) 0 0 no-repeat;
+			float: right;
+			cursor: pointer;
+		}
+		.con_b{
+			width: 5rem;
+			margin: .8rem auto;
+		}
+		.con_b li:nth-child(1){
+			font-size: .3rem;
+			color: #fff;
+			font-family: 微软雅黑;
+		}
+		.con_b li:nth-child(2){
+			font-size: .24rem;
+			color: #fff;
+			font-family: 微软雅黑;
+			margin-top: .24rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="head">
+			<span class="head_l"><</span>
+			<span class="head_m">配对</span>
+		</div>
+		<div class="con">
+			<ul class="con_t">
+				<li class="con_t_l"></li>
+				<li class="con_t_r"></li>
+			</ul>
+			<ol class="con_b">
+				<li>说明文字介绍如何配对？</li>
+				<li>获取或发送验证码验证成功后可与对方配对，查看对方信息，和对方聊天等等获取或发送<br>验证码验证成功后可与对方配对，查看对方<br>信息，和对方聊天等等</li>
+			</ol>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+	$('.con_t_l').click(function (){
+		window.open('ayhq.html');
+	})
+</script>
+</html>

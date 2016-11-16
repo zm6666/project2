@@ -1,0 +1,308 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>爱语</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		#outer{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.inner{
+			width: 10.24rem;
+			overflow: hidden;
+			transition: all 0.3s linear;
+		}
+		.box1{
+			width: 3.8rem;
+			height: 11.36rem;
+			float: left;
+			background: #e83e4a;
+			padding-top: .4rem;
+		}
+		.top span{
+			font-size: .36rem;
+			font-family: 微软雅黑;
+			color: #fff;
+			display: inline-block;
+			float: right;
+			margin-right: .5rem;
+		}
+		.top{
+			width: 3.8rem;
+			height: 1.09rem;
+			line-height: 1.09rem;
+			text-align: center;
+			overflow: hidden;
+		}
+		.foot{
+			font-size: .3rem;
+			font-family: 微软雅黑;
+			color: #fff;
+			overflow: hidden;
+		}
+		/* .foot li:nth-child(1) img,.foot li:nth-child(2) img,.foot li:nth-child(3) img,.foot li:nth-child(4) img,.foot li:nth-child(5) img{
+			float: left;
+		} */
+		.foot li img{
+			float: left;
+		}
+		/* .foot li:nth-child(1) span,.foot li:nth-child(2) span,.foot li:nth-child(3) span,.foot li:nth-child(4) span,.foot li:nth-child(5) span{
+			float: left;
+			margin-top: .07rem;
+			margin-left: .3rem;
+		} */
+		.foot li span{
+			float: left;
+			margin-top: .07rem;
+			margin-left: .3rem;
+		}
+		.foot li{
+			width: 2.75rem;
+			height: .59rem;
+			padding-left: .1rem;
+			padding-top: .05rem;
+			margin-left: .3rem;
+			margin-top: .3rem;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.li1{
+			background: rgba(251,252,249,.2);
+			border-radius: .35rem;
+		}
+		.foot li:nth-child(5){
+			margin-top: .8rem;
+		}
+
+
+
+
+
+
+		.box{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: 0 auto;
+			background: url(images/bg2.png) 0 0 no-repeat;
+			float: left;
+		}
+		.head{
+			width: 6.4rem;
+			height: .6rem;
+			background: #e83e4a;
+		}
+		.head_m{
+			display: inline-block;
+			font-size: .34rem;
+			width: 5.42rem;
+			color: #fff;
+			font-family: 微软雅黑;
+			text-align: center;
+		}
+		.head_l{
+			display: inline-block;
+			width: .4rem;
+			height: .4rem;
+			margin-top: .1rem;
+			background: url(images/cd.png) 0 0 no-repeat;
+			cursor: pointer;
+		}
+		.head_r{
+			display: inline-block;
+			width: .4rem;
+			height: .4rem;
+			margin-top: .1rem;
+			background: url(images/wz.png) 0 0 no-repeat;
+			cursor: pointer;
+		}
+		.con{
+			width: 5.58rem;
+			padding: .2rem;
+			margin: .1rem auto;
+		}
+		.con_t{
+			width: 5.58rem;
+			height: 1.96rem;
+			margin: 0 auto;
+			background: #fff;
+			border-radius: .15rem;
+		}
+		.con_tt{
+			width: 5.5rem;
+			padding: .2rem 0;
+			text-align: center;
+		}
+		.con_tb{
+			overflow: hidden;
+			padding: 0 .5rem;
+		}
+		.con_tb p:nth-child(1){
+			font-size: .24rem;
+			font-family: 微软雅黑;
+			color: #666;
+			float: left;
+		}
+		.con_tb p:nth-child(2){
+			font-size: .24rem;
+			font-family: 微软雅黑;
+			color: #666;
+			float: right;
+			margin-right: .1rem;
+		}
+		.con_m{
+			margin-top: .3rem;
+		}
+		.alt{
+			width: 5.18rem;
+			height: 1.36rem;
+			background: #fff;
+			border-radius: .15rem;
+			padding: .3rem .2rem;
+			font-size: .3rem;
+		}
+		.rq{
+			width: 5.58rem;
+			height: .94rem;
+			background: #fff;
+			border-radius: .15rem;
+			text-align: center;
+			line-height: .94rem;
+			font-size: .36rem;
+		}
+		.con_b{
+			margin-top: .2rem;
+			overflow: hidden;
+		}
+		.jcp{
+			width: 1.75rem;
+			height: .58rem;
+			background: rgba(251,252,249,.2);
+			border-radius: .15rem;
+			text-align: center;
+			line-height: .58rem;
+			float: right;
+			margin-top: .35rem;
+		}
+		.jc{
+			font-family: 微软雅黑;
+			font-size: .3rem;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<div class="inner">
+			<div class="box1">
+				<div class="top">
+					<img src="images/tx3.png" alt="">
+					<span>iViperious</span>
+				</div>
+				<ul class="foot">
+					<li class="li1">
+						<img src="images/zy.png" alt="">
+						<span>主页</span>
+					</li>
+					<li>
+						<img src="images/ssq.png" alt="">
+						<span>说说墙</span>
+					</li>
+					<li>
+						<img src="images/lts.png" alt="">
+						<span>聊天室</span>
+					</li>
+					<li>
+						<img src="images/sz.png" alt="">
+						<span>设置</span>
+					</li>
+					<li>
+						<img src="images/tc.png" alt="">
+						<span>退出</span>
+					</li>
+				</ul>
+			</div>
+			<div class="box">
+				<div class="head">
+					<span class="head_l"></span>
+					<span class="head_m">爱语</span>
+					<span class="head_r"></span>
+				</div>
+				<div class="con">
+					<div class="con_t">
+						<div class="con_tt">
+							<img src="images/tx1.png" alt="">
+							<img src="images/line.png" alt="">
+							<img src="images/tx2.png" alt="">
+						</div>
+						<div class="con_tb">
+							<p>张娜</p>
+							<p>李楠</p>
+						</div>
+					</div>
+					<div class="con_m">
+						<img src="images/aqxy.png" alt="">
+						<p class="alt">暗恋他暗恋他暗恋他暗恋他暗恋他<br>暗恋他暗恋他暗恋他<br>暗恋他暗恋他</p>
+					</div>
+					<div class="con_b">
+						<p class="rq">相恋日期2015-10-16</p>
+						<div class="jcp">
+							<p class="jc">解除关系</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+	var outer=document.getElementById('outer');
+	outer.scrollLeft=380;
+	// var arr=['ay.html','ayssq.html','aylts.html','aysz.html'];
+	$('.head_l').toggle(function (){
+		$('.inner').css({'transform':'translateX(3.8rem)'});
+	},function (){
+		$('.inner').css({'transform':'translateX(0rem)'});
+	})
+
+	//点击
+	$('.foot li').click(function (){
+		var i=$('.foot li').index(this);
+		$(this).addClass('li1').siblings().removeClass('li1');
+		// window.open(arr[i]);
+	})
+	//1
+	$('.foot li').eq(1).click(function (){
+		window.open('ayssq.html');
+	})
+	//2
+	$('.foot li').eq(2).click(function (){
+		window.open('aylts.html');
+	})
+	//3
+	$('.foot li').eq(3).click(function (){
+		window.open('aysz.html');
+	})
+
+	$('.head_r').click(function (){
+		window.open('ayhq.html');
+	})
+
+
+	$('.jc').click(function (){
+		$('.con_t').hide();
+		$('.con_m').hide();
+		$('.rq').hide();
+		$('.jcp').hide()
+	})
+</script>
+</html>

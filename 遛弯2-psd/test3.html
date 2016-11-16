@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	
+</style>
+</head>
+<body>
+	<h1>页面三</h1>
+	<p>提交成功！</p>
+	<div><button>返回上一页</button><span>10</span>秒后自动返回上一页。</div>
+</body>
+<script>
+	var btns=document.getElementsByTagName('button');
+	var span=document.getElementsByTagName('span');
+	btns[0].onclick=function (){
+		window.open('test1.html','_self');
+	}
+	var num=10;
+	var time=null;
+	time=setInterval(function (){
+		num--;
+		if (num<=0) {
+			// window.history.go(-1);
+			window.history.back();
+			clearInterval(time);
+		};
+		span[0].innerHTML=num;
+	},1000);
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>mobile</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 6.4rem;
+			height: 10.08rem;
+			background: green;
+		}
+		a{
+			padding: .1rem;
+			background: skyblue;
+			border-radius: 30%;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="###">
+			<input type="file" name="" value="" accept="image/*" capture="camera">
+		</a>
+		<input type="file" name="" value="" capture="photo">
+		<a href="tel:111" mce_href="tel:111">电话</a>
+		<a href="sms:18263430150">发短信</a>
+	</div>
+</body>
+<script type="text/javascript">
+	function ReSet(){
+		var html=document.getElementsByTagName('html')[0];
+		var ww=document.documentElement.clientWinth;
+		var scale=ww/640;
+		html.style.fontSize=100*scale+'px';
+	}
+	
+	ReSet();
+	window.onresize=function (){
+		ReSet();
+	}
+</script>
+</html>

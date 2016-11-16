@@ -1,0 +1,175 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>忘记密码</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.box{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: 0 auto;
+			background: url(images/bg.png) 0 0 no-repeat;
+			padding: .1rem;
+		}
+		.head_m{
+			display: inline-block;
+			font-size: .34rem;
+			width: 5.92rem;
+			text-align: center;
+			color: #fff;
+			font-family: 微软雅黑;
+			text-align: center;
+		}
+		.head_l{
+			width: .19rem;
+			height: .33rem;
+			color: #fff;
+			font-size: .3rem;
+			font-weight: bold;
+		}
+		.con{
+			width: 4.78rem;
+			margin: 0 auto;
+			margin-top: 1.52rem;
+			overflow: hidden;
+		}
+		.con_tp,.con_mp,.con_bp{
+			background: rgba(251,251,241,.4);
+			padding: .17rem;
+			border-radius: .05rem;
+			margin-top: .1rem;
+
+		}
+		.con_bp{
+			width: 2.6rem;
+			float: left;
+		}
+		.con_bpr{
+			width: 1.2rem;
+			background: rgba(251,251,241,.4);
+			padding: .25rem;
+			border-radius: .05rem;
+			margin-top: .1rem;
+			float: right;
+			text-align: center;
+			color: #fff;
+			font-size: .2rem;
+			cursor: pointer;
+		}
+		.con_t{
+			width: 4.08rem;
+			height: .4rem;
+			background: url(images/us.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		.con_t input,.con_m input,.con_b input{
+			width: 3.52rem;
+			height: .4rem;
+			position: absolute;
+			font-size: .2rem;
+			right: 0;
+			background: transparent;
+			border-left: 2px solid #fff;
+			border-right: transparent;
+			border-top: transparent;
+			border-bottom: transparent;
+			color: #fff;
+		}
+		.con_b input{
+			width: 2.05rem;
+		}
+		.con_m{
+			width: 4.08rem;
+			height: .4rem;
+			background: url(images/mb.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		.con_bb{
+			margin-top: 1.2rem;
+		}
+		.con_b{
+			width: 2.6rem;
+			height: .4rem;
+			background: url(images/lock.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		input::-webkit-input-placeholder{
+			color: #fff;
+		}
+		.sub{
+			width: 4.78rem;
+			height: .64rem;
+			margin: .38rem auto;
+			background: rgba(251,251,241,.4);
+			border-radius: .05rem;
+			font-size: .27rem;
+			font-family: 微软雅黑;
+			color: #fff;
+			text-align: center;
+			line-height: .64rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="head">
+			<span class="head_l"><</span>
+			<span class="head_m">忘记密码</span>
+		</div>
+		<div class="con">
+			<div class="con_tp">
+				<div class="con_t">
+					<input type="text" name="" value="" placeholder="用户名">
+				</div>
+			</div>
+			<div class="con_mp">
+				<div class="con_m">
+					<input type="text" name="" value="" placeholder="手机号码">
+				</div>
+			</div>
+			<div class="con_bp">
+				<div class="con_b">
+					<input type="text" name="" value="" placeholder="验证码">
+				</div>
+			</div>
+			<div class="con_bpr">获取验证码</div>
+			<div class="con_bb">
+				<div class="sub">提交</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+	var time=null;
+	var x=0;
+	$('.con_bpr').click(function (){
+		if (x==0) {
+			clearInterval(time);
+			var now=new Date();
+			now.setMinutes(now.getMinutes()+1);
+			time=setInterval(function (){
+				x=1;
+				var now2=new Date();
+				var cha=now-now2;
+				var seconds=parseInt(cha/1000);
+				if (seconds<10) {
+					seconds='0'+seconds;
+				};
+				$('.con_bpr').html(seconds);
+				if (seconds<=55) {
+					seconds=0;
+					clearInterval(time);
+					$('.con_bpr').html('获取验证码');
+					x=0;
+				};
+			},1)
+		}
+	})
+</script>
+</html>

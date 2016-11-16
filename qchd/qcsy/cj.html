@@ -1,0 +1,179 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>cj</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.tp{
+			width: 6.4rem;
+			height: .83rem;
+			line-height: .83rem;
+			margin: 0 auto;
+			background: #1c1b21;
+			overflow: hidden;
+		}
+		.tp span{
+			display: inline-block;
+			font-size: .28rem;
+			color: #fff;
+			font-family: 微软雅黑;
+		}
+		.tp var{
+			display: inline-block;
+			margin-left: 1.8rem;
+			font-size: .34rem;
+			color: #fff;
+			font-family: 微软雅黑;
+		}
+		.tp em{
+			display: inline-block;
+			height: .2rem;
+			font-size: .28rem;
+			color: #fff;
+			font-family: 微软雅黑;
+			float: right;
+		}
+		.box{
+			width: 6.4rem;
+			height: 10.8rem;
+			background: url(images/bg01.jpg) 0 0 no-repeat;
+			margin: 0 auto;
+			background-size: 6.4rem 11.8rem;
+		}
+		.con{
+			width: 4.84rem;
+			margin: .2rem auto;
+			text-align: center;
+		}
+		.con p{
+			font-size: .5rem;
+			color: #012770;
+			font-family: 微软雅黑;
+			font-weight: bold;
+		}
+		.con span{
+			display: inline-block;
+			font-size: .27rem;
+			color: #646567;
+			font-family: 微软雅黑;
+		}
+		.foot{
+			width: 6rem;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+		.foot li{
+			float: left;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="tp">
+			<span><返回</span>
+			<var>码上晨献</var>
+			<em>...</em>
+		</div>
+		<div class="top">
+			<img src="images/bg02.jpg" alt="">
+		</div>
+		<div class="con">
+			<p>幸运“触”手可及</p>
+			<span>轻触任一款启辰车型牌即可参与抽奖</span>
+		</div>
+		<ul class="foot">
+			<li><img src="images/qc_01.png" alt=""></li>
+			<li><img src="images/qc_02.png" alt=""></li>
+			<li><img src="images/qc_03.png" alt=""></li>
+			<li><img src="images/qc_04.png" alt=""></li>
+			<li><img src="images/qc_05.png" alt=""></li>
+			<li><img src="images/qc_06.png" alt=""></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+
+	function setcookie (key,value,days) {
+	var date=new Date();
+	date.setDate(date.getDate()+days);
+	document.cookie=key+"="+escape(value)+"; expires="+date;
+	}
+	function getcookie (key) {
+		var arr=document.cookie.split('; ');
+		for (var i = 0; i < arr.length; i++) {
+			var arr1=arr[i].split('=');
+			if (arr1[0]==key) {
+				return unescape(arr1[1]);
+			};
+		};
+		return false;
+	}
+	function removecookie (key) {
+		setcookie(key,'0',-1);
+	}
+
+	
+	// $('.foot li').click(function (){
+	// 	if (getcookie('onlyone')) {
+	// 		window.open('cyc.html');
+	// 	}else{
+	// 		//场内抽奖
+	// 		if (getcookie('inorout')=='in') {
+	// 			 var sjs=Math.floor(Math.random()*10);
+	// 			 if (sjs<=6) {
+	// 			 	window.open('wzj.html');
+	// 			 }else if(sjs>5){
+	// 			 	window.open('cnzj.html');
+	// 			 }
+	// 		 };
+
+	// 		 //场外抽奖
+	// 		 if (getcookie('inorout')=='out') {
+	// 			var sjs=Math.floor(Math.random()*10);
+	// 			if (sjs<=3) {
+	// 				window.open('cwzj.html');
+	// 			}else{
+	// 				window.open('wzj.html');
+	// 			}
+	// 		};
+	// 	}
+	// 	setcookie('onlyone','yes',7);
+	// })
+
+	
+
+
+	//合并一起写
+	$('.foot li').click(function (){
+		if (getcookie('onlyone')) {
+			window.open('cyc.html');
+		}else{
+			//场内抽奖
+			if (getcookie('inorout')=='in') {
+				 var sjs=Math.floor(Math.random()*10);
+				 if (sjs<=6) {
+				 	window.open('wzj.html');
+				 }else if(sjs>5){
+				 	window.open('cnzj.html');
+				 }
+			 }else if (getcookie('inorout')=='out'){
+			 //场外抽奖
+				var sjs=Math.floor(Math.random()*10);
+				if (sjs<=3) {
+					window.open('cwzj.html');
+				}else{
+					window.open('wzj.html');
+				}
+			};
+		}
+		setcookie('onlyone','yes',7);
+	})
+
+</script>
+</html>

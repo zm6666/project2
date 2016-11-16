@@ -1,0 +1,187 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>登录</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.box{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: 0 auto;
+			background: url(images/bg.png) 0 0 no-repeat;
+			padding: .1rem;
+		}
+		.head_m{
+			display: inline-block;
+			font-size: .34rem;
+			width: 5.92rem;
+			text-align: center;
+			color: #fff;
+			font-family: 微软雅黑;
+			text-align: center;
+		}
+		.head_l{
+			width: .19rem;
+			height: .33rem;
+			color: #fff;
+			font-size: .3rem;
+			font-weight: bold;
+		}
+		.con{
+			width: 4.39rem;
+			margin: 0 auto;
+		}
+		.con_t{
+			width: 1.6rem;
+			height: 1.6rem;
+			margin: 1rem auto;
+		}
+		.con_m{
+			width: 4.39rem;
+			height: 1.75rem;
+			margin: 0 auto;
+			background: rgba(251,251,241,.4);
+			border-radius: .15rem;
+		}
+		.con_m_tp,.con_m_bp{
+			padding: .17rem;
+		}
+		.con_m_t{
+			width: 4.08rem;
+			height: .4rem;
+			background: url(images/us.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		.con_m_t input,.con_m_b input{
+			width: 3.52rem;
+			height: .4rem;
+			position: absolute;
+			font-size: .2rem;
+			right: 0;
+			background: transparent;
+			border-left: 2px solid #fff;
+			border-right: transparent;
+			border-top: transparent;
+			border-bottom: transparent;
+			color: #fff;
+		}
+		.con_m_b{
+			width: 4.08rem;
+			height: .4rem;
+			background: url(images/lock.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		.line{
+			height: 1px;
+			background: #fff;
+		}
+		.sub{
+			width: 4.39rem;
+			height: .64rem;
+			margin: .38rem auto;
+			background: rgba(251,251,241,.4);
+			border-radius: .05rem;
+			font-size: .27rem;
+			font-family: 微软雅黑;
+			color: #fff;
+			text-align: center;
+			line-height: .64rem;
+			cursor: pointer;
+		}
+		.con_b{
+			overflow: hidden;
+		}
+		.con_b a,.foot a{
+			font-family: 微软雅黑;
+			font-size: .24rem;
+			color: #fff;
+		}
+		.con_b a:nth-child(2){
+			float: right;
+		}
+		.foot{
+			width: 4.39rem;
+			height: .64rem;
+			margin: 0 auto;
+			margin-top: 1.58rem;
+			background: rgba(251,251,241,.2);
+			text-align: center;
+			line-height: .64rem;
+		}
+		input::-webkit-input-placeholder{
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="head">
+			<span class="head_l"><</span>
+			<span class="head_m">登录</span>
+		</div>
+		<div class="con">
+			<div class="con_t">
+				<img src="images/logo.png" alt="">
+			</div>
+			<div class="con_m">
+				<div class="con_m_tp">
+					<div class="con_m_t">
+						<input class="user2" type="text" name="" value="" placeholder="用户名">
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="con_m_bp">
+					<div class="con_m_b">
+						<input type="password" name="" value="" placeholder="密码">
+					</div>
+				</div>
+			</div>
+			<div class="con_b">
+				<div class="sub">Login</div>
+				<a href="aywjmm.html" target="_blank">忘记密码</a>
+				<a href="ayzc.html" target="_blank">注册账号</a>
+			</div>
+		</div>
+		<div class="foot"><a href="###">社交账号一键登录</a></div>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+	function setcookie (key,value,days) {
+		var date=new Date();
+		date.setDate(date.getDate()+days);
+		document.cookie=key+"="+escape(value)+"; expires="+date;
+	}
+	function getcookie (key) {
+		var arr=document.cookie.split('; ');
+		for (var i = 0; i < arr.length; i++) {
+			var arr1=arr[i].split('=');
+			if (arr1[0]==key) {
+				return unescape(arr1[1]);
+			};
+		};
+		return false;
+	}
+	function removecookie (key) {
+		setcookie(key,'0',-1);
+	}
+
+	$('.sub').click(function (){
+		if ($('.user2').val()=='') {
+			alert('请先注册');
+		}else{
+			if (getcookie('zh')==$('.user2').val()) {
+				console.log(getcookie('zh'))
+				alert('登录成功');
+			}else{
+				alert('用户名不存在');
+			}
+		}
+	})
+</script>
+</html>

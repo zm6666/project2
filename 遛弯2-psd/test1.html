@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	
+</style>
+</head>
+<body>
+	<h1>页面一</h1>
+	<a href="test2.html" target="_blank">跳转页面22</a>
+	<a href="test3.html" target="_self">跳转页面33</a>
+	<button>跳转页面22</button>
+	<button>跳转页面33</button>
+</body>
+<script>
+	var btns=document.getElementsByTagName('button');
+	btns[0].onclick=function (){
+		window.open('test2.html','_self');
+	}
+	btns[1].onclick=function (){
+		window.open('test3.html','_blank');
+	}
+</script>
+</html>

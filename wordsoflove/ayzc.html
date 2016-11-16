@@ -1,0 +1,177 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>注册</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.box{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: 0 auto;
+			background: url(images/bg.png) 0 0 no-repeat;
+			padding: .1rem;
+		}
+		.head_m{
+			display: inline-block;
+			font-size: .34rem;
+			width: 5.92rem;
+			text-align: center;
+			color: #fff;
+			font-family: 微软雅黑;
+			text-align: center;
+		}
+		.head_l{
+			width: .19rem;
+			height: .33rem;
+			color: #fff;
+			font-size: .3rem;
+			font-weight: bold;
+		}
+		.con{
+			width: 4.78rem;
+			margin: 0 auto;
+			margin-top: 1.52rem;
+		}
+		.con_tp,.con_mp,.con_bp{
+			background: rgba(251,251,241,.4);
+			padding: .17rem;
+			border-radius: .05rem;
+			margin-top: .1rem;
+
+		}
+		.con_t{
+			width: 4.08rem;
+			height: .4rem;
+			background: url(images/us.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		.con_t input,.con_m input,.con_b input{
+			width: 3.52rem;
+			height: .4rem;
+			position: absolute;
+			font-size: .2rem;
+			right: 0;
+			background: transparent;
+			border-left: 2px solid #fff;
+			border-right: transparent;
+			border-top: transparent;
+			border-bottom: transparent;
+			color: #fff;
+		}
+		.con_m,.con_b{
+			width: 4.08rem;
+			height: .4rem;
+			background: url(images/lock.png) 0rem 0rem no-repeat;
+			position: relative;
+		}
+		input::-webkit-input-placeholder{
+			color: #fff;
+		}
+		.sub{
+			width: 4.78rem;
+			height: .64rem;
+			margin: .38rem auto;
+			background: rgba(251,251,241,.4);
+			border-radius: .05rem;
+			font-size: .27rem;
+			font-family: 微软雅黑;
+			color: #fff;
+			text-align: center;
+			line-height: .64rem;
+			cursor: pointer;
+		}
+		.dl{
+			font-family: 微软雅黑;
+			font-size: .24rem;
+			color: #fff;
+			padding-left: .1rem;
+			cursor: pointer;
+		}
+		.foot{
+			width: 4.39rem;
+			height: .64rem;
+			margin: 0 auto;
+			margin-top: 2.59rem;
+			background: rgba(251,251,241,.2);
+			text-align: center;
+			line-height: .64rem;
+		}
+		.foot a{
+			font-family: 微软雅黑;
+			font-size: .24rem;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="head">
+			<span class="head_l"><</span>
+			<span class="head_m">注册</span>
+		</div>
+		<div class="con">
+			<div class="con_tp">
+				<div class="con_t">
+					<input class="user" type="text" name="" value="" placeholder="用户名">
+				</div>
+			</div>
+			<div class="con_mp">
+				<div class="con_m">
+					<input class="pass" type="password" name="" value="" placeholder="密码">
+				</div>
+			</div>
+			<div class="con_bp">
+				<div class="con_b">
+					<input class="qz" required type="password" name="" value="" placeholder="确认密码">
+				</div>
+			</div>
+			<div class="con_bb">
+				<div class="sub">注册</div>
+				<p class="dl">已有账号登录</p>
+			</div>
+			<div class="foot"><a href="###">社交账号一键登录</a></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+	function setcookie (key,value,days) {
+		var date=new Date();
+		date.setDate(date.getDate()+days);
+		document.cookie=key+"="+escape(value)+"; expires="+date;
+	}
+	function getcookie (key) {
+		var arr=document.cookie.split('; ');
+		for (var i = 0; i < arr.length; i++) {
+			var arr1=arr[i].split('=');
+			if (arr1[0]==key) {
+				return unescape(arr1[1]);
+			};
+		};
+		return false;
+	}
+	function removecookie (key) {
+		setcookie(key,'0',-1);
+	}
+
+	$('.sub').click(function (){
+		if ($('.user').val()==''||$('.pass').val()==''||$('.qz').val()=='') {
+			alert('用户名,密码或确认密码不能为空');
+		}else if ($('.pass').val()!=$('.qz').val()) {
+			alert('密码与确认密码不一致');
+		}else{
+			if (getcookie('zh')==$('.user').val()) {
+			alert('该用户已被注册');
+		}
+			alert('注册成功');
+			setcookie('zh',$('.user').val(),7);
+			window.open('aydl.html');
+		}
+	})
+</script>
+</html>

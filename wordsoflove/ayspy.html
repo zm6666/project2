@@ -1,0 +1,224 @@
+<!doctype html>
+<html style="font-size:100px;">
+<head>
+	<meta charset="utf-8">
+	<title>爱语闪屏页</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.box{
+			width: 6.4rem;
+			height: 11.36rem;
+			margin: .1rem auto;
+			position: relative;
+		}
+		#outer{
+			width: 6.4rem;
+			height: 11.36rem;
+			overflow: hidden;
+		}
+		#inner{
+			width: 32rem;
+			height: 11.36rem;
+			overflow: hidden;
+		}
+		#inner li{
+			width: 6.4rem;
+			height: 11.36rem;
+			float: left;
+		}
+		#list{
+			overflow: hidden;
+			position: absolute;
+			left: 2.6rem;
+			bottom: .78rem;
+		}
+		#list li{
+			width: .2rem;
+			height: .2rem;
+			float: left;
+			background: #fff;
+			border-radius: 50%;
+			margin: .1rem;
+			cursor: pointer;
+		}
+		#list .show{
+			background: #e83e49;
+		}
+		.sub{
+			position: relative;
+		}
+		.sp1{
+			position: absolute;
+			display: inline-block;
+			width: 2.46rem;
+			height: .78rem;
+			left: .56rem;
+			bottom: .78rem;
+			color: #fff;
+			font-size: .3rem;
+			font-family: 微软雅黑;
+			text-align: center;
+			line-height: .78rem;
+			background: rgba(0,0,0,0.2);
+			/* display: none; */
+		}
+		.sp2{
+			position: absolute;
+			display: inline-block;
+			width: 2.46rem;
+			height: .78rem;
+			right: .56rem;
+			bottom: .78rem;
+			color: #fff;
+			font-size: .3rem;
+			font-family: 微软雅黑;
+			text-align: center;
+			line-height: .78rem;
+			background: rgba(0,0,0,0.2);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="outer">
+			<ul id="inner">
+				<!-- <li>
+					<img src="images/sp3.jpg" alt="">
+				</li> -->
+				<li>
+					<img src="images/sp1.jpg" alt="">
+				</li>
+				<li>
+					<img src="images/sp2.jpg" alt="">
+				</li>	
+				<li class="sub">  
+					<img src="images/sp3.jpg" alt="">
+					<a class="sp1" href="###">登录</a>
+					<a class="sp2" href="###">注册</a>
+				</li>
+				<!-- <li>
+					<img src="images/sp1.jpg" alt="">
+				</li> -->
+			</ul>
+		</div>
+		<ul id="list">
+			<li class="show"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jq1.8.js"></script>
+<script type="text/javascript" src="ort.js"></script>
+<script type="text/javascript">
+	//动画效果
+	var a=0,b=0,time=null;
+	function dmove (){
+		$('#outer').animate({scrollLeft:$('#inner img').eq(0).width()*a,},500);
+		$('#list li').eq(b).addClass('show').siblings().removeClass('show');
+	}
+
+	$('#list li').click(function (){
+		clearInterval(time);
+		var i=$('#list li').index(this);
+		a=i;
+		b=i;
+		dmove();
+	})
+
+
+	// var outer=document.getElementById('outer');
+	// var inner=document.getElementById('inner');
+	// var lis1=inner.getElementsByTagName('li');
+	// var lists=document.getElementById('list');
+	// var lis2=lists.getElementsByTagName('li');
+	// outer.scrollLeft=lis1[0].offsetWidth;
+	// var a=1,b=0,time1=null,time2=null;
+	// function automove (){
+	// 	clearInterval(time1);
+	// 	time1=setInterval(function (){
+	// 		a++;
+	// 		if (a>=lis1.length) {
+	// 			outer.scrollLeft=lis1[0].offsetWidth;
+	// 			a=2;
+	// 		};
+	// 		b++;
+	// 		if (b>=lis2.length) {
+	// 			b=0;
+	// 		};
+	// 		move();
+	// 	},2000)
+	// }
+
+	function move (){
+		var start=outer.scrollLeft;
+		var end=lis1[0].offsetWidth*a;
+		var change=end-start;
+		var minstep=0;
+		var maxstep=10;
+		var everystep=change/maxstep;
+		clearInterval(time2);
+		time2=setInterval(function (){
+			minstep++;
+			if (minstep>=maxstep) {
+				clearInterval(time2);
+			};
+			start=start+everystep;
+			outer.scrollLeft=start;
+		},20)
+		for (var i = 0; i < lis2.length; i++) {
+			lis2[i].className='';
+		};
+		lis2[b].className='show';
+	}
+
+
+	
+
+	//滑动
+	var inner=document.getElementById('inner');
+	var lis=inner.getElementsByTagName('li');
+	var x0=0,y0=0,x1=0,y1=0,n=0;
+	window.addEventListener('touchstart',function (e){
+		x0=e.touches[0].clientX;
+		y0=e.touches[0].clientY;
+		x1=e.touches[0].clientX;
+		y1=e.touches[0].clientY;
+	},false)
+	window.addEventListener('touchmove',function (e){
+		x1=e.touches[0].clientX;
+		y1=e.touches[0].clientY;
+	},false)
+	window.addEventListener('touchend',function (e){
+		if (x0-x1<-80) {
+			// alert('左滑');
+			n--;
+			if (n<0) {
+				n=lis.length-1;
+			};
+		}else if (x0-x1>80){
+			// alert('右滑');
+			n++;
+			if (n>lis.length-1) {
+				n=0;
+			};
+		}
+		move();
+	},false)
+
+
+	//跳转界面
+
+	//跳转登录
+	$('.sp1').click(function (){
+		window.open('aydl.html');
+	})
+	//跳转注册
+	$('.sp2').click(function (){
+		window.open('ayzc.html');
+	})
+</script>
+</html>
